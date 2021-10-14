@@ -1,13 +1,33 @@
 Source: deepin-draw
 Section: utils
 Priority: optional
-Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, pkg-config,libexif-dev, libqt5svg5-dev, libraw-dev, libfreeimage-dev, libqt5opengl5-dev,libdtkgui-dev, qttools5-dev-tools, libdtkwidget-dev, libxcb-util0-dev, libdtkcore5-bin
-Standards-Version: 3.9.8
+Maintainer: Ananta Mishra <mishraananta2017@gmail.com>
+XSBC-Original-Maintainer: Deepin Packages Builder <packages@deepin.com>
+Build-Depends:
+ cmake,
+ debhelper-compat (=13),
+ libdtkcore5-bin(>=5.5~),
+ libdtkgui-dev(>=5.5~),
+ libdtkwidget-dev(>=5.5~),
+ libexif-dev,
+ libfreeimage-dev,
+ libqt5opengl5-dev,
+ libqt5svg5-dev,
+ libraw-dev,
+ libxcb-util0-dev,
+ pkg-config,
+ qt5-qmake,
+ qtbase5-dev,
+ qttools5-dev-tools,
+Standards-Version: 4.5.1
 Homepage: http://www.deepin.org
 
 Package: deepin-draw
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, qt5-image-formats-plugins, deepin-picker-cli
+Depends:
+ deepin-picker-cli,
+ qt5-image-formats-plugins,
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: Draw for UOS
- Draw is a lightweight drawing tool for users to freely draw and simply edit images. 
+ Draw is a lightweight drawing tool for users to freely draw and simply edit images.

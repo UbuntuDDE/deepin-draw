@@ -23,7 +23,6 @@
 #include "drawshape/globaldefine.h"
 
 #include "widgets/cmenu.h"
-#include <QFileDevice>
 #include <DGraphicsView>
 
 DWIDGET_USE_NAMESPACE

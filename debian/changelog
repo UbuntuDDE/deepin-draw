@@ -1,5 +1,5 @@
-deepin-draw (0.0.1-1) unstable; urgency=medium
+deepin-draw (5.8.0.22-1ubuntu1) impish; urgency=medium
 
-  * init 
+  * New upstream release for impish. 
 
- -- Deepin Packages Builder <packages@deepin.com>  Fri, 07 Jul 2017 15:49:17 +0800
+ -- Ananta Mishra <mishraananta2017@gmail.com>  Thu, 14 Oct 2021 20:11:32 +0545

@@ -1,0 +1,60 @@
+Description: deepin draw dwidget include
+ .
+ deepin-draw (5.8.0.22-1ubuntu1) impish; urgency=medium
+ .
+   * New upstream release for impish.
+Author: Ananta Mishra <mishraananta2017@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2021-10-14
+
+--- deepin-draw-5.8.0.22.orig/frame/cgraphicsview.h
++++ deepin-draw-5.8.0.22/frame/cgraphicsview.h
+@@ -23,6 +23,7 @@
+ #include "drawshape/globaldefine.h"
+ 
+ #include "widgets/cmenu.h"
++#include <QFileDevice>
+ #include <DGraphicsView>
+ 
+ DWIDGET_USE_NAMESPACE
+--- deepin-draw-5.8.0.22.orig/widgets/ccheckbutton.h
++++ deepin-draw-5.8.0.22/widgets/ccheckbutton.h
+@@ -21,6 +21,7 @@
+ 
+ #include <QMap>
+ #include <DToolButton>
++#include <DWidget>
+ 
+ DWIDGET_USE_NAMESPACE
+ 
+--- deepin-draw-5.8.0.22.orig/widgets/cclickbutton.h
++++ deepin-draw-5.8.0.22/widgets/cclickbutton.h
+@@ -20,6 +20,7 @@
+ #define CCLICKBUTTON_H
+ 
+ #include <DToolButton>
++#include <DWidget>
+ 
+ DWIDGET_USE_NAMESPACE
+ 
+--- deepin-draw-5.8.0.22.orig/widgets/ciconbutton.cpp
++++ deepin-draw-5.8.0.22/widgets/ciconbutton.cpp
+@@ -22,6 +22,7 @@
+ #include "frame/cviewmanagement.h"
+ 
+ #include <QPainter>
++#include <QMouseEvent>
+ #include <QDebug>
+ 
+ #include <DPalette>

@@ -16,50 +16,59 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef CCLICKBUTTON_H
-#define CCLICKBUTTON_H
+#ifndef CPUSHBUTTON_H
+#define CPUSHBUTTON_H
 
+#include <QMap>
 #include <DToolButton>
-#include <DWidget>
 
 DWIDGET_USE_NAMESPACE
 
-class CClickButton : public DToolButton
+class CCheckButton : public DToolButton
 {
     Q_OBJECT
 public:
-    enum EClickBtnSatus {
+    enum EButtonSattus {
         Normal,
         Hover,
         Press,
-        Disable
+        Active
     };
 
+
 public:
-    explicit CClickButton(const QMap<int, QMap<EClickBtnSatus, QString> > &pictureMap, const QSize &size, DWidget *parent = nullptr );
-    void setDisable(bool);
+    explicit CCheckButton(const QMap<int, QMap<EButtonSattus, QString> > &pictureMap, const QSize &size, DWidget *parent = nullptr, bool isCheckLock = true);
+    void setChecked(bool);
+    bool isChecked() const;
 
     void setCurrentTheme(int currentTheme);
 
 signals:
     void buttonClick();
+    void mouseRelease();
 public slots:
 
 protected:
     void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
     void enterEvent(QEvent *e) Q_DECL_OVERRIDE;
     void leaveEvent(QEvent *e) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
 //    void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
+
 private:
     void updateImage();
 
 private:
-    EClickBtnSatus m_currentStatus;
+    bool m_isHover;
+    bool m_isChecked;
+    bool m_isPressed;
+    bool m_isCheckLock; //是否只允许点击选中 不允许点击取消选中
+    EButtonSattus m_currentStatus;
+    EButtonSattus m_tmpStatus;
     int m_currentTheme;
 
+    QMap<int, QMap<EButtonSattus, QString> > m_pictureMap;
 
-    QMap<int, QMap<EClickBtnSatus, QString> > m_pictureMap;
 };
 
-#endif // CCLICKBUTTON_H
+#endif // CPUSHBUTTON_H
